@@ -227,6 +227,11 @@ function SobresView({ goBack }) {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Evita el comportamiento por defecto del formulario
+    openSobre();
+  };
+
   const closeModal = () => {
     setCurrentSobre(null);
     setSelectedSobre(null);
@@ -249,7 +254,7 @@ function SobresView({ goBack }) {
       </div>
 
       {selectedSobre && (
-        <div className="password-container">
+        <form className="password-container" onSubmit={handleSubmit}>
           <label htmlFor="password">
             ¿Cuál es la contraseña para el sobre "{selectedSobre.subtitle}"?
           </label>
@@ -260,11 +265,11 @@ function SobresView({ goBack }) {
             onChange={(e) => setInputPassword(e.target.value)}
             className="password-input"
           />
-          <button onClick={openSobre} className="open-button">
+          <button type="submit" className="open-button">
             Abrir
           </button>
           {errorMessage && <p className="error-message">{errorMessage}</p>}
-        </div>
+        </form>
       )}
 
       {currentSobre && (

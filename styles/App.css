@@ -99,6 +99,32 @@
   .sobre-item p {
     font-size: 0.9rem;
   }
+
+  @media (max-width: 768px) {
+    .password-container {
+      margin: 20px 0; 
+      text-align: center;
+    }
+  
+    .password-input {
+      margin: 10px 0; 
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 80%; 
+    }
+  
+    .open-button {
+      margin-top: 10px; 
+      padding: 10px 20px;
+      background-color: #901E34;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+  }  
 }
 
 @media (max-width: 480px) {
